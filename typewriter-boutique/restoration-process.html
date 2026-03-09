@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restoration Process — KeyLegacy</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page-banner {
+      padding: 140px 0 80px; position: relative; overflow: hidden;
+      background: linear-gradient(to bottom, rgba(10,11,15,0.85), rgba(10,11,15,0.8)), url('assets/img/restoration_hero.png') center/cover no-repeat;
+    }
+    .page-banner::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse 70% 60% at 75% 50%, rgba(124,58,237,.12) 0%, transparent 65%),
+                  radial-gradient(ellipse 40% 40% at 10% 80%, rgba(6,182,212,.08) 0%, transparent 60%);
+    }
+    .process-img {
+      border-radius:16px; overflow:hidden; position:relative;
+    }
+    .process-img img { width:100%; display:block; }
+    .process-img::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(124,58,237,.15) 0%, transparent 50%);
+    }
+    .tool-chip {
+      display:inline-flex; align-items:center; gap:6px;
+      background: var(--bg-tertiary); border: 1px solid var(--glass-border);
+      border-radius:6px; padding:5px 12px; font-size:.78rem; color:var(--text-secondary);
+      margin:3px;
+    }
+    .price-card {
+      text-align:center; padding:32px 24px;
+    }
+    .price-amt {
+      font-family:'Orbitron',sans-serif; font-size:2.2rem; font-weight:800;
+      color:var(--gold); display:block; margin-bottom:6px;
+    }
+    .price-desc { font-size:.82rem; color:var(--text-muted); margin-bottom:20px; }
+    .price-features { list-style:none; padding:0; margin-bottom:24px; }
+    .price-features li {
+      padding:8px 0; border-bottom:1px solid var(--glass-border);
+      font-size:.85rem; color:var(--text-secondary);
+      display:flex; align-items:center; gap:8px;
+    }
+    .price-features li:last-child { border-bottom:none; }
+    .price-features li i { color:var(--cyan); }
+  </style>
+</head>
+<body>
+<div id="page-loader"><span class="loader-text">KEY LEGACY</span></div>
+<div id="scroll-progress"></div>
+
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="home-2.html">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html">Showcase</a>
+      <a href="restoration-process.html" class="active">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme" style="font-size: 0.8rem; width: auto; background: transparent;"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
+</div>
+<!-- ░░ END HEADER ░░ -->
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <div class="container-custom position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="hero-eyebrow">Our Craft</span>
+        <h1 class="hero-title">The Restoration<br/><span class="text-grad">Process</span></h1>
+        <p class="hero-sub">18–40 hours of disciplined work. Every machine earns its certificate through the same exacting protocol — no exceptions, no shortcuts.</p>
+        <div class="d-flex gap-3">
+          <a href="contact.html" class="btn-grad"><i class="fas fa-envelope me-2"></i>Submit Your Machine</a>
+          <a href="appraisal-services.html" class="btn-outline">Get Appraisal</a>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="process-img">
+          <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=85&auto=format&fit=crop" alt="Restoration Workshop"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TIMELINE ═══ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="row g-5">
+      <div class="col-lg-4" data-aos="fade-right">
+        <span class="section-eyebrow">Step-by-Step</span>
+        <h2 class="section-title">How We<br/><span class="text-gold">Restore</span></h2>
+        <p class="section-sub mb-4">From initial inspection to final certification, every stage is documented and reversible. We restore history — we don't erase it.</p>
+        <div class="card-glass p-4">
+          <div class="d-flex justify-content-between mb-3">
+            <span style="font-size:.78rem;color:var(--text-muted);">Average hours</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:.9rem;color:var(--gold);">22 hrs</span>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <span style="font-size:.78rem;color:var(--text-muted);">Parts documented</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:.9rem;color:var(--gold);">200+</span>
+          </div>
+          <div class="d-flex justify-content-between">
+            <span style="font-size:.78rem;color:var(--text-muted);">Machines completed</span>
+            <span style="font-family:'Orbitron',sans-serif;font-size:.9rem;color:var(--gold);">340+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="timeline-dot"></div>
+            <div class="card-glass p-4">
+              <div class="tl-step">Step 01</div>
+              <div class="tl-title">Intake & Documentation</div>
+              <p class="tl-desc">Every machine enters our workshop photographed from 12 angles. Serial numbers are cross-referenced against manufacturer records. A detailed intake form records all visible damage, missing parts, and cosmetic condition — this becomes the baseline for our restoration log.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-camera me-1"></i>Photography</span>
+                <span class="tool-chip"><i class="fas fa-database me-1"></i>Serial Verification</span>
+                <span class="tool-chip"><i class="fas fa-clipboard me-1"></i>Condition Report</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-dot"></div>
+            <div class="card-glass p-4">
+              <div class="tl-step">Step 02</div>
+              <div class="tl-title">Full Disassembly</div>
+              <p class="tl-desc">The carriage is removed. Typebars are individually indexed and photographed before removal. Every screw, spring, and lever is catalogued in our parts tray system. We work in sections — never rushing, never forcing. Stuck fasteners are freed with penetrating oil and patience, not force.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-tools me-1"></i>Precision Tools</span>
+                <span class="tool-chip"><i class="fas fa-oil-can me-1"></i>Penetrant Oil</span>
+                <span class="tool-chip"><i class="fas fa-tag me-1"></i>Parts Indexing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-dot"></div>
+            <div class="card-glass p-4">
+              <div class="tl-step">Step 03</div>
+              <div class="tl-title">Ultrasonic Cleaning</div>
+              <p class="tl-desc">Type slugs, linkage arms, and small metal components go into our ultrasonic bath at 37kHz. Decades of dried ink, dust, and oil are removed without abrasion. The result: parts as clean as the day they left the factory — critical for precise mechanical alignment.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-wave-square me-1"></i>Ultrasonic Bath</span>
+                <span class="tool-chip"><i class="fas fa-tint me-1"></i>Degreaser</span>
+                <span class="tool-chip"><i class="fas fa-wind me-1"></i>Compressed Air</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-dot"></div>
+            <div class="card-glass p-4">
+              <div class="tl-step">Step 04</div>
+              <div class="tl-title">Mechanical Overhaul</div>
+              <p class="tl-desc">The escapement — the heart of any typewriter — is adjusted with a watchmaker's precision. Typebar alignment is checked against a reference card at ±0.1mm tolerance. Spring tensions are measured and corrected. The platen rubber is tested with a Shore durometer and replaced if hardness exceeds acceptable limits.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-ruler me-1"></i>Alignment Gauge</span>
+                <span class="tool-chip"><i class="fas fa-clock me-1"></i>Escapement Tool</span>
+                <span class="tool-chip"><i class="fas fa-tachometer-alt me-1"></i>Durometer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-dot"></div>
+            <div class="card-glass p-4">
+              <div class="tl-step">Step 05</div>
+              <div class="tl-title">Cosmetic Restoration</div>
+              <p class="tl-desc">We clean and preserve original finishes — never repainting unless absolutely necessary. Decals are carefully revived with conservation-grade products. Small chips may be touched up using colour-matched enamel. Chrome parts are polished to as-original specification.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-paint-brush me-1"></i>Renaissance Wax</span>
+                <span class="tool-chip"><i class="fas fa-palette me-1"></i>Enamel Touch-Up</span>
+                <span class="tool-chip"><i class="fas fa-star me-1"></i>Chrome Polish</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="timeline-dot" style="background:var(--grad-gold);"></div>
+            <div class="card-glass p-4" style="border-color:rgba(201,168,76,.3);">
+              <div class="tl-step" style="color:var(--gold);">Step 06</div>
+              <div class="tl-title">Certification & Delivery</div>
+              <p class="tl-desc">A full type test is conducted — every character, every key. The complete restoration log is compiled and printed. The certificate of authenticity is signed by our workshop director. The machine is packed in a custom hardwood crate with humidity-buffering foam and delivered with white-glove handling.</p>
+              <div class="mt-3">
+                <span class="tool-chip"><i class="fas fa-certificate me-1"></i>Authentication</span>
+                <span class="tool-chip"><i class="fas fa-box me-1"></i>Crate Packaging</span>
+                <span class="tool-chip"><i class="fas fa-truck me-1"></i>White Glove Delivery</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="section-pad" style="background:var(--bg-secondary);">
+  <div class="container-custom">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow justify-content-center">Services & Pricing</span>
+      <h2 class="section-title">What Does Restoration<br/><span class="text-grad">Cost?</span></h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-glass price-card h-100">
+          <span class="badge-pill mb-3">Essential</span>
+          <span class="price-amt">$180</span>
+          <div class="price-desc">Basic service & clean</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> External cleaning</li>
+            <li><i class="fas fa-check"></i> New ribbon installed</li>
+            <li><i class="fas fa-check"></i> Type test & report</li>
+            <li><i class="fas fa-check"></i> Basic lubrication</li>
+            <li style="color:var(--text-muted);"><i class="fas fa-times" style="color:var(--text-muted);"></i> Mechanical overhaul</li>
+            <li style="color:var(--text-muted);"><i class="fas fa-times" style="color:var(--text-muted);"></i> Certificate</li>
+          </ul>
+          <a href="contact.html" class="btn-outline w-100 justify-content-center">Request</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-glass price-card h-100" style="border-color:rgba(124,58,237,.4);box-shadow:var(--glow-purple);">
+          <span class="badge-pill mb-3" style="background:rgba(124,58,237,.2);">Most Popular</span>
+          <span class="price-amt">$420</span>
+          <div class="price-desc">Full workshop restoration</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Complete disassembly</li>
+            <li><i class="fas fa-check"></i> Ultrasonic cleaning</li>
+            <li><i class="fas fa-check"></i> Mechanical overhaul</li>
+            <li><i class="fas fa-check"></i> Cosmetic restoration</li>
+            <li><i class="fas fa-check"></i> New ribbon + platen check</li>
+            <li><i class="fas fa-check"></i> Certificate of authenticity</li>
+          </ul>
+          <a href="contact.html" class="btn-grad w-100 justify-content-center">Request</a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-glass price-card h-100">
+          <span class="badge-pill gold-pill mb-3">Museum Grade</span>
+          <span class="price-amt">$780+</span>
+          <div class="price-desc">Collector-level preservation</div>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> Everything in Full</li>
+            <li><i class="fas fa-check"></i> Platen replacement</li>
+            <li><i class="fas fa-check"></i> Custom type-face fitting</li>
+            <li><i class="fas fa-check"></i> Colour-matched cosmetics</li>
+            <li><i class="fas fa-check"></i> Museum-grade packaging</li>
+            <li><i class="fas fa-check"></i> Provenance research report</li>
+          </ul>
+          <a href="contact.html" class="btn-gold w-100 justify-content-center">Request</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container-custom">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand-name">
+          <span class="nav-brand-icon" style="width:32px;height:32px;font-size:.85rem;">⌨</span>
+          KEY<span class="text-grad">LEGACY</span>
+        </div>
+        <p class="footer-desc">A curated boutique for vintage typewriter collectors. Every machine restored with obsessive precision and documented with care.</p>
+        <div class="social-row">
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Pages</div>
+        <ul class="footer-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home-2</a></li>
+          <li><a href="product-view.html">Collection</a></li>
+          <li><a href="restoration-process.html">Restoration</a></li>
+          <li><a href="appraisal-services.html">Appraisal</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Services</div>
+        <ul class="footer-ul">
+          <li><a href="#">Full Restoration</a></li>
+          <li><a href="#">Appraisal</a></li>
+          <li><a href="#">Custom Ribbon</a></li>
+          <li><a href="#">Consignment</a></li>
+          <li><a href="contact.html">Consultations</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-head">Newsletter</div>
+        <p style="color:var(--text-secondary);font-size:.85rem;margin-bottom:16px;">New arrivals and restoration stories, delivered monthly.</p>
+        <div class="nl-row">
+          <input class="nl-input" type="email" placeholder="your@email.com"/>
+          <button class="btn-grad" style="padding:10px 18px;white-space:nowrap;font-size:.75rem;">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-hr"/>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KeyLegacy. All rights reserved.</span>
+      <span class="footer-copy">Crafted with <span style="color:var(--purple-light);">♥</span> for the art of writing.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

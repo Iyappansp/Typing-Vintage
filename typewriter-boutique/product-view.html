@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hermes 3000 — KeyLegacy Collection</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page-hero {
+      padding: 140px 0 80px; 
+      background: linear-gradient(to bottom, rgba(10,11,15,0.85), rgba(10,11,15,0.8)), url('assets/img/product_hero.png') center/cover no-repeat;
+      border-bottom: 1px solid var(--glass-border); position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(ellipse 60% 60% at 80% 50%, rgba(124,58,237,.1) 0%, transparent 65%);
+    }
+    .thumb-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:12px; }
+    .thumb { height:72px; border-radius:8px; overflow:hidden; cursor:pointer; border:2px solid transparent; transition:var(--transition); }
+    .thumb.active { border-color:var(--purple); }
+    .thumb img { width:100%; height:100%; object-fit:cover; }
+    .main-img { height:400px; border-radius:14px; overflow:hidden; }
+    .main-img img { width:100%; height:100%; object-fit:cover; transition:transform .5s; }
+    .spec-row { display:flex; justify-content:space-between; align-items:center; padding:11px 0; border-bottom:1px solid var(--glass-border); }
+    .spec-row:last-child { border-bottom:none; }
+    .spec-key { font-size:.8rem; color:var(--text-muted); }
+    .spec-val { font-size:.88rem; color:var(--text-primary); font-weight:600; text-align:right; }
+    .collection-card { transition:var(--transition); }
+    .collection-card:hover { transform:translateY(-4px); }
+  </style>
+</head>
+<body>
+<div id="page-loader"><span class="loader-text">KEY LEGACY</span></div>
+<div id="scroll-progress"></div>
+
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="home-2.html">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html" class="active">Showcase</a>
+      <a href="restoration-process.html">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme" style="font-size: 0.8rem; width: auto; background: transparent;"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
+</div>
+<!-- ░░ END HEADER ░░ -->
+
+<!-- PAGE HERO BREADCRUMB -->
+<div class="page-hero">
+  <div class="container-custom position-relative">
+    <div class="d-flex align-items-center gap-2 mb-4" style="font-size:.8rem;color:var(--text-muted);">
+      <a href="index.html" style="color:var(--text-muted);text-decoration:none;">Home</a>
+      <span>/</span>
+      <span style="color:var(--text-secondary);">Collection</span>
+      <span>/</span>
+      <span style="color:var(--purple-light);">Hermes 3000</span>
+    </div>
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <h1 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;">Hermes 3000</h1>
+      <span class="badge-pill gold-pill"><i class="fas fa-star me-1"></i> Featured Machine</span>
+      <span class="badge-pill cyan-pill">Available</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRODUCT DETAIL ═══ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="row g-5">
+
+      <!-- Left: Image Gallery -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="main-img" id="main-product-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&auto=format&fit=crop" alt="Hermes 3000" id="active-img"/>
+        </div>
+        <div class="thumb-grid">
+          <div class="thumb active" onclick="setImg(this,'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80')">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt=""/>
+          </div>
+          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&q=80')">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&q=80" alt=""/>
+          </div>
+          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80')">
+            <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80" alt=""/>
+          </div>
+          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=400&q=80')">
+            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=400&q=80" alt=""/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <span style="font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);">1966 · Switzerland</span>
+          <span class="badge-pill"><i class="fas fa-shield-alt me-1"></i>Authenticated</span>
+        </div>
+        <div style="font-size:2.4rem;font-weight:800;color:var(--gold);font-family:'Orbitron',sans-serif;margin-bottom:20px;">$1,240</div>
+
+        <!-- Condition Ratings -->
+        <div class="card-glass p-4 mb-4 ratings-block">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="fas fa-chart-bar" style="color:var(--purple-light);"></i>
+            <span style="font-family:'Orbitron',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Condition Ratings</span>
+          </div>
+          <div class="rating-row">
+            <span class="rating-lbl">Mechanical</span>
+            <div class="rating-bar"><div class="rating-fill" data-width="96"></div></div>
+            <span class="rating-val">9.6</span>
+          </div>
+          <div class="rating-row">
+            <span class="rating-lbl">Aesthetic</span>
+            <div class="rating-bar"><div class="rating-fill gold" data-width="88"></div></div>
+            <span class="rating-val">8.8</span>
+          </div>
+          <div class="rating-row">
+            <span class="rating-lbl">Rarity</span>
+            <div class="rating-bar"><div class="rating-fill" data-width="75"></div></div>
+            <span class="rating-val">7.5</span>
+          </div>
+          <div class="rating-row">
+            <span class="rating-lbl">Collectibility</span>
+            <div class="rating-bar"><div class="rating-fill gold" data-width="92"></div></div>
+            <span class="rating-val">9.2</span>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:20px;">
+          The Hermes 3000 is widely regarded as one of the finest portable typewriters ever manufactured. This 1966 example was acquired from an estate in Lausanne and underwent our full restoration protocol over 22 hours. The seafoam-green casing shows minor patina consistent with its age, while all mechanical systems operate flawlessly.
+        </p>
+
+        <!-- Tags -->
+        <div class="mb-4">
+          <span class="tag">Portable</span><span class="tag">Script & Standard Type</span>
+          <span class="tag">Original Case</span><span class="tag">New Ribbon</span>
+          <span class="tag">Seafoam Green</span>
+        </div>
+
+        <!-- CTAs -->
+        <div class="d-flex gap-3 flex-wrap">
+          <button class="btn-grad flex-grow-1"><i class="fas fa-shopping-bag me-2"></i>Purchase — $1,240</button>
+          <button class="btn-outline"><i class="fas fa-heart me-2"></i>Save</button>
+          <button class="btn-outline"><i class="fas fa-share-alt"></i></button>
+        </div>
+        <p style="font-size:.75rem;color:var(--text-muted);margin-top:12px;"><i class="fas fa-lock me-1"></i> Certificate of authenticity + museum-grade shipping included.</p>
+      </div>
+    </div>
+
+    <!-- ── Specs + Restoration Log ── -->
+    <div class="row g-5 mt-3">
+      <div class="col-lg-5" data-aos="fade-up">
+        <div class="card-glass p-4">
+          <div class="section-eyebrow mb-3">Technical Specifications</div>
+          <div class="spec-row"><span class="spec-key">Model</span><span class="spec-val">Hermes 3000</span></div>
+          <div class="spec-row"><span class="spec-key">Year</span><span class="spec-val">1966</span></div>
+          <div class="spec-row"><span class="spec-key">Origin</span><span class="spec-val">Yverdon, Switzerland</span></div>
+          <div class="spec-row"><span class="spec-key">Serial No.</span><span class="spec-val">3442817-C</span></div>
+          <div class="spec-row"><span class="spec-key">Type Face</span><span class="spec-val">Elite 12 / Script</span></div>
+          <div class="spec-row"><span class="spec-key">Carriage Width</span><span class="spec-val">340mm (Standard)</span></div>
+          <div class="spec-row"><span class="spec-key">Case</span><span class="spec-val">Original Clamshell (intact)</span></div>
+          <div class="spec-row"><span class="spec-key">Ribbon</span><span class="spec-val">New Black/Red Universal</span></div>
+          <div class="spec-row"><span class="spec-key">Weight</span><span class="spec-val">4.2 kg with case</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-glass p-4">
+          <div class="section-eyebrow mb-3">Restoration Log</div>
+          <p style="font-size:.82rem;color:var(--text-muted);margin-bottom:20px;">22 hours total · Completed February 2025</p>
+
+          <div class="log-entry">
+            <div class="log-date">Day 1 · Intake &amp; Assessment</div>
+            <div class="log-action">Full photographic documentation. Serial number verified against Hermes factory records. Carriage removed; typebars inspected individually. 3 bent typebars identified, mechanism intact.</div>
+          </div>
+          <div class="log-entry">
+            <div class="log-date">Day 2–3 · Disassembly &amp; Cleaning</div>
+            <div class="log-action">Complete disassembly to component level. Ultrasonic cleaning of type slugs. Platen removed; rubber measured at Shore A 42 — within acceptable range, no replacement required.</div>
+          </div>
+          <div class="log-entry">
+            <div class="log-date">Day 4–5 · Mechanical Overhaul</div>
+            <div class="log-action">Escapement adjusted and regulated. Margin stops recalibrated. 3 typebars realigned to ±0.1mm tolerance. All pivot points lubricated with clock oil.</div>
+          </div>
+          <div class="log-entry">
+            <div class="log-date">Day 6 · Cosmetic &amp; Final</div>
+            <div class="log-action">Casing cleaned with isopropyl and waxed with Renaissance Wax. Touch-up applied to two small paint chips. Ribbon installed. Full type test — 26 character passes, all clean impressions.</div>
+          </div>
+          <div class="log-entry" style="border-left-color:var(--gold);">
+            <div class="log-date" style="color:var(--gold);">Certificate Issued</div>
+            <div class="log-action">Authentication certificate signed by workshop director. Serial record lodged with KeyLegacy database. Machine approved for sale.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── More From Collection ── -->
+    <div class="mt-5 pt-3" data-aos="fade-up">
+      <div class="section-eyebrow mb-2">More From Our Collection</div>
+      <h3 class="section-title mb-4">You May Also Like</h3>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card-glass prod-card p-3 collection-card">
+            <div class="prod-img" style="height:180px;">
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&q=80&auto=format&fit=crop" alt="Olivetti"/>
+            </div>
+            <div class="prod-name">Olivetti Lettera 32</div>
+            <div class="prod-year">1963 · Italy</div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="prod-price">$840</span>
+              <a href="#" class="btn-grad" style="padding:6px 14px;font-size:.7rem;">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card-glass prod-card p-3 collection-card">
+            <div class="prod-img" style="height:180px;">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&q=80&auto=format&fit=crop" alt="Royal"/>
+            </div>
+            <div class="prod-name">Royal Quiet De Luxe</div>
+            <div class="prod-year">1955 · USA</div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="prod-price">$1,680</span>
+              <a href="#" class="btn-grad" style="padding:6px 14px;font-size:.7rem;">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card-glass prod-card p-3 collection-card">
+            <div class="prod-img" style="height:180px;">
+              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&q=80&auto=format&fit=crop" alt="Underwood"/>
+            </div>
+            <div class="prod-name">Underwood No. 5</div>
+            <div class="prod-year">1932 · USA</div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="prod-price">$2,100</span>
+              <a href="#" class="btn-grad" style="padding:6px 14px;font-size:.7rem;">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card-glass prod-card p-3 collection-card">
+            <div class="prod-img" style="height:180px;">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&q=80&auto=format&fit=crop" alt="Smith Corona"/>
+            </div>
+            <div class="prod-name">Smith Corona Silent</div>
+            <div class="prod-year">1958 · USA</div>
+            <div class="d-flex justify-content-between align-items-center mt-2">
+              <span class="prod-price">$720</span>
+              <a href="#" class="btn-grad" style="padding:6px 14px;font-size:.7rem;">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container-custom">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand-name">
+          <span class="nav-brand-icon" style="width:32px;height:32px;font-size:.85rem;">⌨</span>
+          KEY<span class="text-grad">LEGACY</span>
+        </div>
+        <p class="footer-desc">A curated boutique for vintage typewriter collectors. Every machine restored with obsessive precision and documented with care.</p>
+        <div class="social-row">
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Pages</div>
+        <ul class="footer-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home-2</a></li>
+          <li><a href="product-view.html">Collection</a></li>
+          <li><a href="restoration-process.html">Restoration</a></li>
+          <li><a href="appraisal-services.html">Appraisal</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Services</div>
+        <ul class="footer-ul">
+          <li><a href="#">Full Restoration</a></li>
+          <li><a href="#">Appraisal</a></li>
+          <li><a href="#">Custom Ribbon</a></li>
+          <li><a href="#">Consignment</a></li>
+          <li><a href="contact.html">Consultations</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-head">Newsletter</div>
+        <p style="color:var(--text-secondary);font-size:.85rem;margin-bottom:16px;">New arrivals and restoration stories, delivered monthly.</p>
+        <div class="nl-row">
+          <input class="nl-input" type="email" placeholder="your@email.com"/>
+          <button class="btn-grad" style="padding:10px 18px;white-space:nowrap;font-size:.75rem;">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-hr"/>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KeyLegacy. All rights reserved.</span>
+      <span class="footer-copy">Crafted with <span style="color:var(--purple-light);">♥</span> for the art of writing.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });</script>
+<script src="assets/js/main.js"></script>
+<script>
+  function setImg(thumb, src) {
+    document.getElementById('active-img').src = src;
+    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
+</script>
+</body>
+</html>

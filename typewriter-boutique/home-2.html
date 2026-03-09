@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Home-2 — KeyLegacy</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .mag-hero {
+      height: 90vh; min-height: 600px; position: relative; overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .mag-hero-img {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=1600&q=85&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .mag-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,14,26,.95) 0%, rgba(10,14,26,.4) 50%, transparent 100%);
+    }
+    .mag-issue {
+      font-family:'Orbitron',sans-serif; font-size:.68rem; font-weight:700;
+      letter-spacing:.25em; text-transform:uppercase;
+      background: var(--grad-gold); -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .mag-headline {
+      font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,4.2rem);
+      font-weight:700; line-height:1.12; margin-bottom:20px; color:#fff;
+    }
+    .editorial-label {
+      font-family:'Orbitron',sans-serif; font-size:.65rem; font-weight:700;
+      letter-spacing:.18em; text-transform:uppercase; color:var(--cyan);
+      margin-bottom:12px; display:block;
+    }
+    .story-title {
+      font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:600;
+      line-height:1.3; margin-bottom:10px;
+    }
+    .story-excerpt { color:var(--text-secondary); font-size:.9rem; line-height:1.75; }
+    .story-meta { font-size:.75rem; color:var(--text-muted); margin-top:14px; }
+    .story-img { border-radius:12px; overflow:hidden; }
+    .story-img img { width:100%; display:block; transition:transform .55s ease; }
+    .story-img:hover img { transform:scale(1.04); }
+    .pull-quote {
+      font-family:'Playfair Display',serif; font-size:clamp(1.2rem,2vw,1.6rem);
+      font-style:italic; color:var(--text-primary); border-left:3px solid var(--gold);
+      padding-left:24px; line-height:1.6;
+    }
+    [dir="rtl"] .pull-quote { border-left:none; border-right:3px solid var(--gold); padding-left:0; padding-right:24px; }
+    .author-chip {
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--glass-bg); border:1px solid var(--glass-border);
+      border-radius:40px; padding:8px 16px 8px 8px;
+    }
+    .author-avatar {
+      width:32px; height:32px; border-radius:50%;
+      background:var(--grad-primary); display:flex; align-items:center;
+      justify-content:center; color:#fff; font-size:.8rem; font-weight:700;
+    }
+  </style>
+</head>
+<body>
+
+<div id="page-loader"><span class="loader-text">KEY LEGACY</span></div>
+<div id="scroll-progress"></div>
+
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="home-2.html" class="active">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html">Showcase</a>
+      <a href="restoration-process.html">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
+</div>
+<!-- ░░ END HEADER ░░ -->
+
+<!-- ═══ Home-2 HERO ═══ -->
+<div class="mag-hero">
+  <div class="mag-hero-img"></div>
+  <div class="mag-hero-overlay"></div>
+  <div class="container-custom position-relative pb-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10 d-flex flex-column align-items-center" data-aos="fade-up">
+        <div class="mag-issue mb-3 mx-auto">Issue No. 47 · Spring 2025</div>
+        <h1 class="mag-headline">The Hermes 3000: Switzerland's Most <em>Perfect Machine</em></h1>
+        <p class="mx-auto" style="color:rgba(240,238,233,.75);font-size:1.05rem;max-width:700px;line-height:1.75;margin-bottom:24px;">
+          Inside the obsessive restoration of a 1966 Hermes 3000 — the machine Cormac McCarthy swore by for forty years.
+        </p>
+        <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+          <div class="author-chip">
+            <div class="author-avatar">MK</div>
+            <span style="font-size:.82rem;">Marcus Kellner · 12 min read</span>
+          </div>
+          <span class="badge-pill cyan-pill"><i class="fas fa-clock me-1"></i> Just Published</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ EDITORIAL GRID ═══ -->
+<section class="section-pad">
+  <div class="container-custom">
+
+    <!-- Lead Story Row -->
+    <div class="row g-5 mb-5 align-items-center" data-reveal>
+      <div class="col-lg-6">
+        <div class="story-img" style="height:420px;">
+          <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=80&auto=format&fit=crop" alt="Restoration closeup" style="height:100%;object-fit:cover;"/>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <span class="editorial-label">Restoration Deep Dive</span>
+        <div class="gold-bar"></div>
+        <h2 class="story-title" style="font-size:1.8rem;">The Art of Bringing a Dead Typewriter Back to Life</h2>
+        <p class="story-excerpt">Oil has dried to varnish. Keys stick. The platen has hardened to stone. For most, this machine is finished. For us, this is where the work begins. We document every step, every decision, every unexpected discovery — because these machines deserve an honest account of their second life.</p>
+        <div class="pull-quote mt-4 mb-4">"We don't restore machines. We restore the possibility of writing."</div>
+        <p class="story-excerpt">The process takes between 18 and 40 hours depending on condition. There are no shortcuts.</p>
+        <div class="story-meta d-flex align-items-center gap-3">
+          <span><i class="fas fa-calendar me-1" style="color:var(--text-muted);"></i>March 14, 2025</span>
+          <span><i class="fas fa-eye me-1" style="color:var(--text-muted);"></i>4,200 views</span>
+          <a href="restoration-process.html" style="color:var(--purple-light);text-decoration:none;font-size:.8rem;">Read Full Story →</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider-grad my-5"/>
+
+    <!-- 3-column stories -->
+    <div class="row g-4">
+      <div class="col-md-4" data-reveal data-delay="0">
+        <div class="card-glass h-100">
+          <div class="story-img" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop" alt="Underwood" style="height:100%;object-fit:cover;"/>
+          </div>
+          <div class="p-4">
+            <span class="editorial-label">History</span>
+            <h3 class="story-title">The Underwood No.5: The Machine That Killed the Scrivener</h3>
+            <p class="story-excerpt">In 1901, Underwood changed everything. A single machine could now produce 50 pages per hour. Offices were never the same.</p>
+            <div class="story-meta"><i class="fas fa-calendar me-1"></i> Feb 28, 2025 · 8 min read</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-reveal data-delay="150">
+        <div class="card-glass h-100">
+          <div class="story-img" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80&auto=format&fit=crop" alt="Writing" style="height:100%;object-fit:cover;"/>
+          </div>
+          <div class="p-4">
+            <span class="editorial-label">Writers & Machines</span>
+            <h3 class="story-title">What Your Typewriter of Choice Says About Your Writing</h3>
+            <p class="story-excerpt">Kerouac used a Hermes. Hemingway had a Royal. Plath typed on a Smith Corona. The machine shapes the manuscript.</p>
+            <div class="story-meta"><i class="fas fa-calendar me-1"></i> Feb 12, 2025 · 6 min read</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" data-reveal data-delay="300">
+        <div class="card-glass h-100">
+          <div class="story-img" style="height:200px;">
+            <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=600&q=80&auto=format&fit=crop" alt="Workshop" style="height:100%;object-fit:cover;"/>
+          </div>
+          <div class="p-4">
+            <span class="editorial-label">Workshop</span>
+            <h3 class="story-title">Inside Our Studio: 1,000 Square Feet of Mechanical Devotion</h3>
+            <p class="story-excerpt">Twelve workbenches. Four thousand spare parts. One mission: to give every machine the attention it deserves.</p>
+            <div class="story-meta"><i class="fas fa-calendar me-1"></i> Jan 30, 2025 · 5 min read</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wide feature card -->
+    <div class="card-glass p-0 overflow-hidden mt-5" data-reveal style="border-radius:20px;">
+      <div class="row g-0">
+        <div class="col-lg-5">
+          <div style="height:100%;min-height:320px;background:url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?w=800&q=80&auto=format&fit=crop') center/cover;"></div>
+        </div>
+        <div class="col-lg-7 p-5 d-flex flex-column justify-content-center">
+          <span class="editorial-label">Collector's Guide</span>
+          <h2 class="story-title" style="font-size:1.6rem;">10 Things to Check Before You Buy a Vintage Typewriter</h2>
+          <p class="story-excerpt mb-4">Typebars, platen condition, escapement function — before you hand over a single dollar, know what you're buying. Our comprehensive buyer's checklist.</p>
+          <div>
+            <a href="product-view.html" class="btn-grad me-3">View Collection</a>
+            <a href="appraisal-services.html" class="btn-outline">Get Appraisal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="container-custom">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand-name">
+          <span class="nav-brand-icon" style="width:32px;height:32px;font-size:.85rem;">⌨</span>
+          KEY<span class="text-grad">LEGACY</span>
+        </div>
+        <p class="footer-desc">A curated boutique for vintage typewriter collectors. Every machine restored with obsessive precision and documented with care.</p>
+        <div class="social-row">
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Pages</div>
+        <ul class="footer-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home-2</a></li>
+          <li><a href="product-view.html">Collection</a></li>
+          <li><a href="restoration-process.html">Restoration</a></li>
+          <li><a href="appraisal-services.html">Appraisal</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Services</div>
+        <ul class="footer-ul">
+          <li><a href="#">Full Restoration</a></li>
+          <li><a href="#">Appraisal</a></li>
+          <li><a href="#">Custom Ribbon</a></li>
+          <li><a href="#">Consignment</a></li>
+          <li><a href="contact.html">Consultations</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-head">Newsletter</div>
+        <p style="color:var(--text-secondary);font-size:.85rem;margin-bottom:16px;">New arrivals and restoration stories, delivered monthly.</p>
+        <div class="nl-row">
+          <input class="nl-input" type="email" placeholder="your@email.com"/>
+          <button class="btn-grad" style="padding:10px 18px;white-space:nowrap;font-size:.75rem;">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-hr"/>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KeyLegacy. All rights reserved.</span>
+      <span class="footer-copy">Crafted with <span style="color:var(--purple-light);">♥</span> for the art of writing.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

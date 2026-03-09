@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KeyLegacy — Vintage Typewriter Boutique</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Custom -->
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Tailwind config inline */
+    .tw-badge { @apply inline-flex items-center gap-1; }
+  </style>
+</head>
+<body>
+
+<!-- ░░ PAGE LOADER ░░ -->
+<div id="page-loader"><span class="loader-text">KEY LEGACY</span></div>
+<div id="scroll-progress"></div>
+
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="home-2.html">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html">Showcase</a>
+      <a href="restoration-process.html">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
+</div>
+<!-- ░░ END HEADER ░░ -->
+<!-- ░░ END HEADER ░░ -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container-custom position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="hero-eyebrow">Est. 1968 · Rare Typewriters</div>
+        <h1 class="hero-title">
+          <span class="text-grad">Machines</span><br/>
+          That Tell<br/>
+          Their Story<span class="tw-cursor"></span>
+        </h1>
+        <p class="hero-sub">Every typewriter in our collection has been individually restored, documented, and curated. We don't sell machines — we pass down <em>history</em>.</p>
+        <div class="hero-actions">
+          <a href="product-view.html" class="btn-grad"><i class="fas fa-keyboard me-2"></i>Browse Collection</a>
+          <a href="restoration-process.html" class="btn-outline">Our Process <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div><span class="stat-num" data-count="340" data-suffix="+">0+</span><span class="stat-lbl">Machines Restored</span></div>
+          <div><span class="stat-num" data-count="28" data-suffix="">0</span><span class="stat-lbl">Years of Craft</span></div>
+          <div><span class="stat-num" data-count="94" data-suffix="%">0%</span><span class="stat-lbl">Client Satisfaction</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80&auto=format&fit=crop" alt="Vintage Typewriter" loading="eager"/>
+          <!-- floating badge -->
+          <div style="position:absolute;bottom:24px;left:24px;z-index:2;" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-glass px-3 py-2 d-inline-flex align-items-center gap-2">
+              <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;animation:blink 1s infinite;"></span>
+              <span style="font-size:.75rem;font-weight:600;">New Arrivals Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CURATED COLLECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="row mb-5" data-reveal>
+      <div class="col-lg-6">
+        <span class="section-eyebrow">Curated Selection</span>
+        <h2 class="section-title">The Collector's<br/><span class="text-gold">Finest Picks</span></h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end">
+        <p class="section-sub ms-lg-auto">Each machine arrives fully documented — serial number verified, restoration logged, and ready to write your next chapter.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-lg-3" data-reveal data-delay="0">
+        <div class="card-glass prod-card p-3">
+          <div class="prod-img">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&q=80&auto=format&fit=crop" alt="Hermes 3000"/>
+            <span class="prod-badge gold-badge">Featured</span>
+          </div>
+          <div class="prod-name">Hermes 3000</div>
+          <div class="prod-year">1965 · Switzerland</div>
+          <div class="cond-dots">
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span>
+          </div>
+          <hr class="prod-divider"/>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="prod-price">$1,240</span>
+            <a href="product-view.html" class="btn-grad" style="padding:7px 16px;font-size:.72rem;">View</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-lg-3" data-reveal data-delay="100">
+        <div class="card-glass prod-card p-3">
+          <div class="prod-img">
+            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=600&q=80&auto=format&fit=crop" alt="Olivetti Lettera"/>
+            <span class="prod-badge">New In</span>
+          </div>
+          <div class="prod-name">Olivetti Lettera 32</div>
+          <div class="prod-year">1963 · Italy</div>
+          <div class="cond-dots">
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot"></span>
+          </div>
+          <hr class="prod-divider"/>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="prod-price">$840</span>
+            <a href="product-view.html" class="btn-grad" style="padding:7px 16px;font-size:.72rem;">View</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-lg-3" data-reveal data-delay="200">
+        <div class="card-glass prod-card p-3">
+          <div class="prod-img">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&q=80&auto=format&fit=crop" alt="Royal Quiet De Luxe"/>
+            <span class="prod-badge">Rare</span>
+          </div>
+          <div class="prod-name">Royal Quiet De Luxe</div>
+          <div class="prod-year">1955 · USA</div>
+          <div class="cond-dots">
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span>
+          </div>
+          <hr class="prod-divider"/>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="prod-price">$1,680</span>
+            <a href="product-view.html" class="btn-grad" style="padding:7px 16px;font-size:.72rem;">View</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-sm-6 col-lg-3" data-reveal data-delay="300">
+        <div class="card-glass prod-card p-3">
+          <div class="prod-img">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80&auto=format&fit=crop" alt="Underwood No.5"/>
+            <span class="prod-badge gold-badge">Archive</span>
+          </div>
+          <div class="prod-name">Underwood No. 5</div>
+          <div class="prod-year">1932 · USA</div>
+          <div class="cond-dots">
+            <span class="cond-dot on"></span><span class="cond-dot on"></span>
+            <span class="cond-dot on"></span><span class="cond-dot"></span>
+            <span class="cond-dot"></span>
+          </div>
+          <hr class="prod-divider"/>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="prod-price">$2,100</span>
+            <a href="product-view.html" class="btn-grad" style="padding:7px 16px;font-size:.72rem;">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-reveal data-delay="100">
+      <a href="product-view.html" class="btn-outline">View Full Collection <i class="fas fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHY KEYLGACY — 3-col features
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:var(--bg-secondary);">
+  <div class="container-custom">
+    <div class="text-center mb-5" data-reveal>
+      <span class="section-eyebrow justify-content-center">Why Choose Us</span>
+      <h2 class="section-title">Craftsmanship You<br/><span class="text-grad">Can Trust</span></h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4" data-reveal data-delay="0">
+        <div class="card-glass p-4 h-100">
+          <div style="width:52px;height:52px;border-radius:12px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <i class="fas fa-tools" style="color:#fff;font-size:1.2rem;"></i>
+          </div>
+          <h3 style="font-size:1rem;margin-bottom:10px;">Full Mechanical Overhaul</h3>
+          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Every carriage, typebar, and ribbon mechanism is dismantled, cleaned, and precisely re-calibrated before a machine leaves our workshop.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-reveal data-delay="150">
+        <div class="card-glass p-4 h-100">
+          <div style="width:52px;height:52px;border-radius:12px;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <i class="fas fa-certificate" style="color:#1A1508;font-size:1.2rem;"></i>
+          </div>
+          <h3 style="font-size:1rem;margin-bottom:10px;">Certificate of Authenticity</h3>
+          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Each machine ships with a hand-signed provenance document, serial number record, and full restoration log — a passport for its history.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-reveal data-delay="300">
+        <div class="card-glass p-4 h-100">
+          <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#06B6D4,#22c55e);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+            <i class="fas fa-shipping-fast" style="color:#fff;font-size:1.2rem;"></i>
+          </div>
+          <h3 style="font-size:1rem;margin-bottom:10px;">Museum-Grade Shipping</h3>
+          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Custom hardwood crates, foam-fitted and humidity-controlled, ensure your machine arrives in exactly the condition it left our studio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUOTE BANNER
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="card-glass p-5 text-center" data-reveal style="background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(6,182,212,.08));">
+      <i class="fas fa-quote-left" style="color:var(--gold);font-size:2rem;margin-bottom:24px;display:block;"></i>
+      <blockquote class="playfair" style="font-size:clamp(1.2rem,2.2vw,1.8rem);font-style:italic;color:var(--text-primary);line-height:1.6;max-width:800px;margin:0 auto 24px;">
+        "The sound of a typewriter is the sound of a mind at work — unhurried, deliberate, permanent."
+      </blockquote>
+      <cite style="font-size:.82rem;color:var(--text-muted);letter-spacing:.15em;text-transform:uppercase;">— KeyLegacy, Workshop Notes</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA BANNER
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad" style="background:var(--bg-secondary);">
+  <div class="container-custom">
+    <div class="row align-items-center g-4" data-reveal>
+      <div class="col-lg-7">
+        <span class="section-eyebrow">Professional Appraisals</span>
+        <h2 class="section-title">Own a Vintage Machine?<br/><span class="text-gold">Let's Value It.</span></h2>
+        <p class="section-sub">Our certified appraisers assess mechanical condition, aesthetic grade, and collector market value — with a full written report.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end">
+        <a href="appraisal-services.html" class="btn-gold me-3"><i class="fas fa-search-dollar me-2"></i>Request Appraisal</a>
+        <a href="contact.html" class="btn-outline mt-3 mt-lg-0">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer-main">
+  <div class="container-custom">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand-name">
+          <span class="nav-brand-icon" style="width:32px;height:32px;font-size:.85rem;">⌨</span>
+          KEY<span class="text-grad">LEGACY</span>
+        </div>
+        <p class="footer-desc">A curated boutique for vintage typewriter collectors. Every machine restored with obsessive precision and documented with care.</p>
+        <div class="social-row">
+          <a href="#" class="soc-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="soc-btn"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Pages</div>
+        <ul class="footer-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="home-2.html">Home-2</a></li>
+          <li><a href="product-view.html">Collection</a></li>
+          <li><a href="restoration-process.html">Restoration</a></li>
+          <li><a href="appraisal-services.html">Appraisal</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="footer-head">Services</div>
+        <ul class="footer-ul">
+          <li><a href="#">Full Restoration</a></li>
+          <li><a href="#">Appraisal</a></li>
+          <li><a href="#">Custom Ribbon</a></li>
+          <li><a href="#">Consignment</a></li>
+          <li><a href="contact.html">Consultations</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-head">Newsletter</div>
+        <p style="color:var(--text-secondary);font-size:.85rem;margin-bottom:16px;">New arrivals and restoration stories, delivered monthly.</p>
+        <div class="nl-row">
+          <input class="nl-input" type="email" placeholder="your@email.com"/>
+          <button class="btn-grad" style="padding:10px 18px;white-space:nowrap;font-size:.75rem;">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-hr"/>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KeyLegacy. All rights reserved.</span>
+      <span class="footer-copy">Crafted with <span style="color:var(--purple-light);">♥</span> for the art of writing.</span>
+    </div>
+  </div>
+</footer>
+<!-- ░░ END FOOTER ░░ -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
