@@ -17,7 +17,7 @@
     }
     .mag-hero-img {
       position: absolute; inset: 0;
-      background: url('https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=1600&q=85&auto=format&fit=crop') center/cover no-repeat;
+      background: url('assets/img/home2_hero.png') center/cover no-repeat;
     }
     .mag-hero-overlay {
       position: absolute; inset: 0;
@@ -87,8 +87,22 @@
       <a href="restoration-process.html">Restoration</a>
       <a href="appraisal-services.html">Appraisal</a>
       <a href="contact.html">Contact</a>
+      <!-- Mobile Auth Stack -->
+      <div class="mobile-auth-stack d-lg-none">
+        <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        <a href="login.html" class="auth-btn btn-login">Login</a>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+           <button class="nav-icon-btn" onclick="document.getElementById('rtl-toggle').click()"><i class="fas fa-exchange-alt"></i></button>
+           <button class="nav-icon-btn" onclick="document.getElementById('theme-toggle').click()"><i class="fas fa-adjust"></i></button>
+        </div>
+      </div>
     </div>
     
+    <!-- Mobile Toggle -->
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <!-- Right: Controls & Buttons -->
     <div class="nav-controls">
       <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
@@ -209,6 +223,69 @@
           <div>
             <a href="product-view.html" class="btn-grad me-3">View Collection</a>
             <a href="appraisal-services.html" class="btn-outline">Get Appraisal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Meet the Experts -->
+    <div class="row align-items-center g-5 mt-5 pt-5" data-reveal>
+      <div class="col-lg-5">
+        <div class="hero-img-wrap">
+          <img src="assets/img/restoration_detail.png" alt="Restoration Detail"/>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <span class="editorial-label">Behind the Bench</span>
+        <h2 class="story-title" style="font-size:2rem;">The Hands Holding the History</h2>
+        <p class="story-excerpt mb-4">Our studio isn't just a workshop; it's a sanctuary for orphans of the industrial age. Learn about the master mechanics who spend their lives decoding the secrets of silent carriages and stuck typebars.</p>
+        <div class="row g-4">
+          <div class="col-sm-6">
+            <h4 style="font-size:1rem;margin-bottom:8px;">Thomas Weber</h4>
+            <span style="font-size:.75rem;color:var(--text-muted);display:block;margin-bottom:10px;">Chief Restorer · 34 Years</span>
+            <p style="font-size:.85rem;color:var(--text-secondary);">Specializes in pre-war German engineering and complex carriage synchronization.</p>
+          </div>
+          <div class="col-sm-6">
+            <h4 style="font-size:1rem;margin-bottom:8px;">Sarah Jenkins</h4>
+            <span style="font-size:.75rem;color:var(--text-muted);display:block;margin-bottom:10px;">Aesthetics Expert · 12 Years</span>
+            <p style="font-size:.85rem;color:var(--text-secondary);">Focuses on original chemical paint matching and nickel-plating preservation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ FAQ SECTION ═══ -->
+    <div class="mt-5 pt-5" data-reveal>
+      <div class="text-center mb-5">
+        <span class="editorial-label">Reader Queries</span>
+        <h2 class="story-title" style="font-size:2.2rem;">Frequently Asked</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Why do people still use typewriters in 2025?</h3>
+            <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            Typewriters provide a distraction-free environment. There are no notifications, no blue light, and no 'undo' button. It forces a deliberate, linear way of thinking that many find essential for creative flow.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is it difficult to find ribbon ink?</h3>
+            <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            Not at all. While you won't find them at your local supermarket, many specialty shops (like KeyLegacy) and online retailers keep fresh stocks of nylon and silk ribbons for 1/2" spool machines.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What's the best model for a beginner?</h3>
+            <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            We usually recommend a 1950s Smith-Corona Silent or a Royal Quiet De Luxe. They are incredibly robust, easy to service, and provide a classic typing experience that isn't too 'finicky' for a new user.
           </div>
         </div>
       </div>

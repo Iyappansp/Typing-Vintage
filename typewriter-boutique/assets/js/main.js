@@ -234,4 +234,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── FAQ Accordion ───────────────────────────────────────── */
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  /* ── Mobile Menu Toggle ──────────────────────────────────── */
+  const menuToggle = document.querySelector('.mobile-nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (menuToggle && navLinks) {
+    const icon = menuToggle.querySelector('i');
+
+    const toggleMenu = () => {
+      navLinks.classList.toggle('show');
+      if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+      }
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : '';
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close when a link inside the navigation is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('show')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
+
 });

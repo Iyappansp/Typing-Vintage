@@ -17,7 +17,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Tailwind config inline */
-    .tw-badge { @apply inline-flex items-center gap-1; }
+    .tw-badge { display: inline-flex; align-items: center; gap: 0.25rem; }
   </style>
 </head>
 <body>
@@ -43,8 +43,22 @@
       <a href="restoration-process.html">Restoration</a>
       <a href="appraisal-services.html">Appraisal</a>
       <a href="contact.html">Contact</a>
+      <!-- Mobile Auth Stack -->
+      <div class="mobile-auth-stack d-lg-none">
+        <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        <a href="login.html" class="auth-btn btn-login">Login</a>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+           <button class="nav-icon-btn" onclick="document.getElementById('rtl-toggle').click()"><i class="fas fa-exchange-alt"></i></button>
+           <button class="nav-icon-btn" onclick="document.getElementById('theme-toggle').click()"><i class="fas fa-adjust"></i></button>
+        </div>
+      </div>
     </div>
     
+    <!-- Mobile Toggle -->
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <!-- Right: Controls & Buttons -->
     <div class="nav-controls">
       <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
@@ -209,41 +223,134 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WHY KEYLGACY — 3-col features
+     STAFF FAVORITES
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-reveal>
+        <div class="hero-img-wrap" style="box-shadow: var(--glow-gold);">
+          <img src="assets/img/home_featured.png" alt="Featured Grid" loading="lazy"/>
+        </div>
+      </div>
+      <div class="col-lg-6" data-reveal data-delay="150">
+        <span class="section-eyebrow">The Vault Selection</span>
+        <h2 class="section-title">Rare Machines, <br/><span class="text-gold">Chosen by Experts</span></h2>
+        <p class="section-sub mb-4">Every month, our chief restorers set aside machines that exhibit exceptional mechanical purity and aesthetic grace. These aren't just tools; they are the high-water marks of 20th-century engineering.</p>
+        <ul style="list-style:none;padding:0;margin-bottom:30px;">
+          <li class="mb-3 d-flex align-items-center gap-3">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span>Museum-grade mechanical integrity</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center gap-3">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span>Orignal factory paint and decals</span>
+          </li>
+          <li class="mb-3 d-flex align-items-center gap-3">
+            <i class="fas fa-check-circle" style="color:var(--gold);"></i>
+            <span>Freshly sourced silk or cotton ribbons</span>
+          </li>
+        </ul>
+        <a href="gallery.html" class="btn-gold">View Vault Items <i class="fas fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
 ══════════════════════════════════════════════════════════════ -->
 <section class="section-pad" style="background:var(--bg-secondary);">
   <div class="container-custom">
     <div class="text-center mb-5" data-reveal>
-      <span class="section-eyebrow justify-content-center">Why Choose Us</span>
-      <h2 class="section-title">Craftsmanship You<br/><span class="text-grad">Can Trust</span></h2>
+      <span class="section-eyebrow justify-content-center">Client Stories</span>
+      <h2 class="section-title">What Our Collectors Say</h2>
     </div>
-
     <div class="row g-4">
       <div class="col-md-4" data-reveal data-delay="0">
-        <div class="card-glass p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:12px;background:var(--grad-primary);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <i class="fas fa-tools" style="color:#fff;font-size:1.2rem;"></i>
+        <div class="card-glass testi-card">
+          <p class="testi-quote"><i class="fas fa-quote-left"></i>The Hermes 3000 I received from KeyLegacy feels brand new. The typing action is buttery smooth, and the documentation was fascinating.</p>
+          <div class="testi-user">
+            <div class="testi-avatar" style="background:url('https://i.pravatar.cc/100?u=1') center/cover;"></div>
+            <div class="testi-info">
+              <h4>Julian Thorne</h4>
+              <span>Journalist, UK</span>
+            </div>
           </div>
-          <h3 style="font-size:1rem;margin-bottom:10px;">Full Mechanical Overhaul</h3>
-          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Every carriage, typebar, and ribbon mechanism is dismantled, cleaned, and precisely re-calibrated before a machine leaves our workshop.</p>
         </div>
       </div>
       <div class="col-md-4" data-reveal data-delay="150">
-        <div class="card-glass p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:12px;background:var(--grad-gold);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <i class="fas fa-certificate" style="color:#1A1508;font-size:1.2rem;"></i>
+        <div class="card-glass testi-card">
+          <p class="testi-quote"><i class="fas fa-quote-left"></i>As a writer, I needed a machine that wouldn't fail. The restoration work here is unlike anything I've seen in thirty years of collecting.</p>
+          <div class="testi-user">
+            <div class="testi-avatar" style="background:url('https://i.pravatar.cc/100?u=2') center/cover;"></div>
+            <div class="testi-info">
+              <h4>Elena Rossi</h4>
+              <span>Novelist, Italy</span>
+            </div>
           </div>
-          <h3 style="font-size:1rem;margin-bottom:10px;">Certificate of Authenticity</h3>
-          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Each machine ships with a hand-signed provenance document, serial number record, and full restoration log — a passport for its history.</p>
         </div>
       </div>
       <div class="col-md-4" data-reveal data-delay="300">
-        <div class="card-glass p-4 h-100">
-          <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#06B6D4,#22c55e);display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-            <i class="fas fa-shipping-fast" style="color:#fff;font-size:1.2rem;"></i>
+        <div class="card-glass testi-card">
+          <p class="testi-quote"><i class="fas fa-quote-left"></i>Their appraisal service saved me from buying a 'lemon' elsewhere. True experts who love the craft as much as their customers do.</p>
+          <div class="testi-user">
+            <div class="testi-avatar" style="background:url('https://i.pravatar.cc/100?u=3') center/cover;"></div>
+            <div class="testi-info">
+              <h4>Marcus Kellner</h4>
+              <span>Collector, Germany</span>
+            </div>
           </div>
-          <h3 style="font-size:1rem;margin-bottom:10px;">Museum-Grade Shipping</h3>
-          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.75;">Custom hardwood crates, foam-fitted and humidity-controlled, ensure your machine arrives in exactly the condition it left our studio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FAQ SECTION
+══════════════════════════════════════════════════════════════ -->
+<section class="section-pad">
+  <div class="container-custom">
+    <div class="text-center mb-5" data-reveal>
+      <span class="section-eyebrow justify-content-center">Common Questions</span>
+      <h2 class="section-title">Everything You Need to Know</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">
+          <h3>How do you ship such delicate machines?</h3>
+          <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          We use custom-engineered triple-wall corrugated crates with high-density foam inserts molded to each machine's specific profile. For rare items, we utilize humidity-controlled hardwood crates. Every shipment is fully insured.
+        </div>
+      </div>
+      <div class="faq-item" data-reveal data-delay="100">
+        <div class="faq-question">
+          <h3>Do you offer a warranty on restored typewriters?</h3>
+          <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          Yes, all our 'Gold Heritage' restored machines come with a 2-year mechanical warranty. If a key sticks or a carriage skips under normal use, we'll fix it at no cost to you.
+        </div>
+      </div>
+      <div class="faq-item" data-reveal data-delay="200">
+        <div class="faq-question">
+          <h3>Can I find ribbons for these older models?</h3>
+          <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          Absolutely. We stock high-quality nylon and silk ribbons for almost every model we sell. Each machine comes with a newly installed ribbon, and you can order replacements directly from our boutique.
+        </div>
+      </div>
+      <div class="faq-item" data-reveal data-delay="300">
+        <div class="faq-question">
+          <h3>How long does a full restoration take?</h3>
+          <div class="faq-toggle-icon"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          A standard restoration takes 4-6 weeks. This includes full teardown, ultrasonic cleaning of all parts, individual polishing, and a 48-hour mechanical stress test.
         </div>
       </div>
     </div>

@@ -55,7 +55,21 @@
       <a href="restoration-process.html">Restoration</a>
       <a href="appraisal-services.html">Appraisal</a>
       <a href="contact.html">Contact</a>
+      <!-- Mobile Auth Stack -->
+      <div class="mobile-auth-stack d-lg-none">
+        <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        <a href="login.html" class="auth-btn btn-login">Login</a>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+           <button class="nav-icon-btn" onclick="document.getElementById('rtl-toggle').click()"><i class="fas fa-exchange-alt"></i></button>
+           <button class="nav-icon-btn" onclick="document.getElementById('theme-toggle').click()"><i class="fas fa-adjust"></i></button>
+        </div>
+      </div>
     </div>
+    
+    <!-- Mobile Toggle -->
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
     
     <!-- Right: Controls & Buttons -->
     <div class="nav-controls">
@@ -95,20 +109,20 @@
       <!-- Left: Image Gallery -->
       <div class="col-lg-6" data-aos="fade-right">
         <div class="main-img" id="main-product-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&auto=format&fit=crop" alt="Hermes 3000" id="active-img"/>
+          <img src="assets/spare/Hermes.png" alt="Hermes 3000" id="active-img"/>
         </div>
         <div class="thumb-grid">
-          <div class="thumb active" onclick="setImg(this,'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80')">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt=""/>
+          <div class="thumb active" onclick="setImg(this,'assets/spare/Hermes.png')">
+            <img src="assets/spare/Hermes.png" alt=""/>
           </div>
-          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&q=80')">
-            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=400&q=80" alt=""/>
+          <div class="thumb" onclick="setImg(this,'assets/spare/Royal.png')">
+            <img src="assets/spare/Royal.png" alt=""/>
           </div>
-          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80')">
-            <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80" alt=""/>
+          <div class="thumb" onclick="setImg(this,'assets/spare/Underwood.png')">
+            <img src="assets/spare/Underwood.png" alt=""/>
           </div>
-          <div class="thumb" onclick="setImg(this,'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=400&q=80')">
-            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=400&q=80" alt=""/>
+          <div class="thumb" onclick="setImg(this,'assets/spare/Adler.png')">
+            <img src="assets/spare/Adler.png" alt=""/>
           </div>
         </div>
       </div>
@@ -225,7 +239,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="card-glass prod-card p-3 collection-card">
             <div class="prod-img" style="height:180px;">
-              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&q=80&auto=format&fit=crop" alt="Olivetti"/>
+              <img src="assets/spare/Olivetti.png" alt="Olivetti"/>
             </div>
             <div class="prod-name">Olivetti Lettera 32</div>
             <div class="prod-year">1963 · Italy</div>
@@ -238,7 +252,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="card-glass prod-card p-3 collection-card">
             <div class="prod-img" style="height:180px;">
-              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&q=80&auto=format&fit=crop" alt="Royal"/>
+              <img src="assets/spare/Royal.png" alt="Royal"/>
             </div>
             <div class="prod-name">Royal Quiet De Luxe</div>
             <div class="prod-year">1955 · USA</div>
@@ -251,7 +265,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="card-glass prod-card p-3 collection-card">
             <div class="prod-img" style="height:180px;">
-              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&q=80&auto=format&fit=crop" alt="Underwood"/>
+              <img src="assets/spare/Underwood.png" alt="Underwood"/>
             </div>
             <div class="prod-name">Underwood No. 5</div>
             <div class="prod-year">1932 · USA</div>
@@ -264,7 +278,7 @@
         <div class="col-sm-6 col-lg-3">
           <div class="card-glass prod-card p-3 collection-card">
             <div class="prod-img" style="height:180px;">
-              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=500&q=80&auto=format&fit=crop" alt="Smith Corona"/>
+              <img src="assets/spare/Smith.png" alt="Smith Corona"/>
             </div>
             <div class="prod-name">Smith Corona Silent</div>
             <div class="prod-year">1958 · USA</div>
