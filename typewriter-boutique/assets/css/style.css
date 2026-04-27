@@ -3,63 +3,63 @@
    Design System · v1.0
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
 /* ── CSS Variables ─────────────────────────────────────────── */
 :root {
-  --bg-primary:     #0A0E1A;
-  --bg-secondary:   #0F1525;
-  --bg-tertiary:    #1A2035;
-  --bg-card:        #141c30;
+  --bg-primary:     #1A1412;
+  --bg-secondary:   #241C16;
+  --bg-tertiary:    #362B23;
+  --bg-card:        #2B221A;
 
-  --glass-bg:       rgba(14, 20, 38, 0.75);
-  --glass-border:   rgba(255, 255, 255, 0.07);
-  --glass-border-h: rgba(124, 58, 237, 0.45);
+  --glass-bg:       rgba(26, 20, 18, 0.75);
+  --glass-border:   rgba(255, 235, 205, 0.07);
+  --glass-border-h: rgba(184, 134, 11, 0.45);
 
-  --text-primary:   #F0EEE9;
-  --text-secondary: #A8B2C8;
-  --text-muted:     #556070;
+  --text-primary:   #E8DEC5;
+  --text-secondary: #C5B496;
+  --text-muted:     #988467;
 
-  --purple:         #7C3AED;
-  --purple-light:   #A78BFA;
-  --cyan:           #06B6D4;
-  --cyan-light:     #67E8F9;
-  --gold:           #C9A84C;
-  --gold-light:     #F0C869;
-  --gold-dim:       #8B6914;
+  --purple:         #8B2E2E;
+  --purple-light:   #A54040;
+  --cyan:           #4A5D23;
+  --cyan-light:     #6B8E23;
+  --gold:           #B8860B;
+  --gold-light:     #DAA520;
+  --gold-dim:       #8B6508;
 
-  --grad-primary:   linear-gradient(135deg, #7C3AED 0%, #06B6D4 100%);
-  --grad-gold:      linear-gradient(135deg, #C9A84C 0%, #F0C869 100%);
-  --grad-hero:      linear-gradient(135deg, #4F1D96 0%, #0C4A6E 100%);
+  --grad-primary:   linear-gradient(135deg, var(--purple) 0%, var(--gold) 100%);
+  --grad-gold:      linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  --grad-hero:      linear-gradient(135deg, #3E2723 0%, #1A1412 100%);
 
-  --glow-purple:    0 0 40px rgba(124, 58, 237, 0.35);
-  --glow-gold:      0 0 40px rgba(201, 168, 76, 0.35);
-  --glow-cyan:      0 0 40px rgba(6, 182, 212, 0.25);
+  --glow-purple:    0 0 40px rgba(139, 46, 46, 0.35);
+  --glow-gold:      0 0 40px rgba(184, 134, 11, 0.35);
+  --glow-cyan:      0 0 40px rgba(74, 93, 35, 0.25);
 
-  --navbar-bg:      rgba(10, 14, 26, 0.96);
-  --radius-card:    16px;
-  --radius-sm:      8px;
+  --navbar-bg:      rgba(26, 20, 18, 0.96);
+  --radius-card:    8px;
+  --radius-sm:      4px;
   --transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="light"] {
-  --bg-primary:     #F5EFE0;
-  --bg-secondary:   #EDE4CF;
-  --bg-tertiary:    #E0D5BC;
-  --bg-card:        #FAF5EA;
-  --glass-bg:       rgba(250, 245, 234, 0.88);
-  --glass-border:   rgba(0, 0, 0, 0.12);
-  --glass-border-h: rgba(109, 40, 217, 0.45);
-  --text-primary:   #1A1508;
-  --text-secondary: #3D3522; 
-  --text-muted:     #524632;
-  --purple:         #5B21B6;
-  --purple-light:   #6D28D9;
-  --cyan:           #0891B2;
-  --gold:           #854D01;
-  --gold-light:     #B45309;
-  --navbar-bg:      rgba(245, 239, 224, 0.98);
+  --bg-primary:     #F4ECD8;
+  --bg-secondary:   #EBE1C7;
+  --bg-tertiary:    #E2D4B5;
+  --bg-card:        #FAF6EB;
+  --glass-bg:       rgba(250, 246, 235, 0.88);
+  --glass-border:   rgba(44, 36, 27, 0.15);
+  --glass-border-h: rgba(139, 46, 46, 0.55);
+  --text-primary:   #1A1412; /* Darker for better visibility */
+  --text-secondary: #3D3128; /* Darker for better visibility */
+  --text-muted:     #5C4D40; /* Darker for better visibility */
+  --purple:         #8B2E2E;
+  --purple-light:   #702222;
+  --cyan:           #4A5D23;
+  --gold:           #966D09; /* Darker gold for better contrast on light bg */
+  --gold-light:     #7A5907;
+  --navbar-bg:      rgba(244, 236, 216, 0.98);
 }
 
 /* Force light text in dark banners when in light mode (since backgrounds are dark) */
@@ -68,9 +68,16 @@
 [data-theme="light"] .page-hero,
 [data-theme="light"] .mag-hero,
 [data-theme="light"] .hero-section:has(.hero-bg) {
-  --text-primary:   #FFFFFF; /* Pure white for maximum visibility */
-  --text-secondary: #E2E8F0; /* Light gray for secondary text */
-  --text-muted:     #CBD5E1; /* Brighter muted color */
+  --text-primary:   #FAF6EB; /* Pure white for maximum visibility */
+  --text-secondary: #EBE1C7; /* Light gray for secondary text */
+  --text-muted:     #E2D4B5; /* Brighter muted color */
+  --purple:         #FF5252; /* Bright red/purple for high contrast */
+  --purple-light:   #FF6B6B; /* Vibrant red/purple for high contrast */
+  --gold:           #FFD700; /* Bright gold for high contrast */
+  --gold-light:     #FDB931; /* Bright warm gold */
+  --cyan-light:     #22D3EE; /* Vibrant cyan */
+  --glass-bg:       rgba(26, 20, 18, 0.75); /* Keep glass cards dark in hero */
+  --glass-border:   rgba(255, 235, 205, 0.07);
 }
 
 /* ── Reset & Base ──────────────────────────────────────────── */
@@ -86,7 +93,7 @@ body {
   line-height: 1.6;
 }
 
-::selection { background: rgba(124, 58, 237, 0.35); color: var(--text-primary); }
+::selection { background: rgba(139, 46, 46, 0.35); color: var(--text-primary); }
 
 /* ── Scroll Progress Bar ────────────────────────────────────── */
 #scroll-progress {
@@ -109,9 +116,9 @@ body {
 }
 #page-loader.hidden { opacity: 0; pointer-events: none; }
 .loader-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Courier Prime', monospace;
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 700;
   background: var(--grad-primary);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -120,8 +127,9 @@ body {
 @keyframes loader-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(.97)} }
 
 /* ── Typography ─────────────────────────────────────────────── */
-h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
-.playfair          { font-family: 'Playfair Display', serif; }
+h1,h2,h3 { font-family: 'Playfair Display', serif; }
+.orbitron { font-family: 'Courier Prime', monospace; }
+.playfair { font-family: 'Playfair Display', serif; }
 
 .text-grad {
   background: var(--grad-primary);
@@ -155,7 +163,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   background: var(--grad-primary);
   color: #fff; border: none;
   padding: 13px 32px; border-radius: var(--radius-sm);
-  font-family: 'Orbitron', sans-serif; font-size: .8rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .8rem; font-weight: 700;
   letter-spacing: .06em; cursor: pointer;
   position: relative; overflow: hidden;
   transition: var(--transition);
@@ -173,7 +181,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 .btn-gold {
   background: var(--grad-gold); color: #1A1508;
   padding: 13px 32px; border-radius: var(--radius-sm);
-  font-family: 'Orbitron', sans-serif; font-size: .8rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .8rem; font-weight: 700;
   letter-spacing: .06em; cursor: pointer; border: none;
   transition: var(--transition);
   display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
@@ -184,7 +192,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   background: transparent; color: var(--text-primary);
   border: 1px solid var(--glass-border);
   padding: 12px 31px; border-radius: var(--radius-sm);
-  font-family: 'Orbitron', sans-serif; font-size: .8rem; font-weight: 600;
+  font-family: 'Courier Prime', monospace; font-size: .8rem; font-weight: 700;
   letter-spacing: .06em; cursor: pointer;
   transition: var(--transition);
   display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
@@ -201,7 +209,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
   padding: 10px 0;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Courier Prime', monospace;
   transition: var(--transition);
 }
 
@@ -214,7 +222,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 @media(min-width: 992px) {
   .header-top .container-custom {
     display: grid;
-    grid-template-columns: 180px 1fr 260px; /* Reduced logo width, increased controls width */
+    grid-template-columns: 200px 1fr 200px; /* Balanced side columns for better centering */
   }
 }
 
@@ -342,7 +350,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   .mobile-auth-stack .btn-signup {
     background: var(--grad-primary);
     color: #fff !important;
-    box-shadow: 0 4px 15px rgba(124,58,237,0.3);
+    box-shadow: 0 4px 15px rgba(139,46,46,0.3);
   }
   .mobile-auth-stack .btn-login {
     border: 1px solid var(--glass-border);
@@ -398,7 +406,9 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   gap: 28px;
 }
 @media(max-width: 1200px) {
-  .header-top .nav-links { gap: 12px; } /* Slightly tighter gap for 1024px and above */
+  .header-top .nav-links { gap: 10px; } /* Even tighter gap for smaller desktop screens */
+  .header-top .nav-controls { gap: 8px; } /* Reduce gap in controls as well */
+  .header-top .auth-btn { padding: 6px 10px; } /* Slightly smaller buttons */
 }
 .header-top .nav-links a {
   font-size: 0.68rem;
@@ -434,7 +444,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 .header-top .btn-signup {
   background: var(--grad-primary);
   color: #fff !important;
-  box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+  box-shadow: 0 4px 12px rgba(139,46,46,0.3);
 }
 .header-top .btn-login {
   border: 1px solid var(--glass-border);
@@ -463,6 +473,13 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 }
 .header-top .nav-icon-btn:hover { color: var(--gold); }
 
+@media(max-width: 1200px) {
+  .header-top .nav-icon-btn span { font-size: 0; } /* Hide text, keep icons visible */
+  .header-top .nav-icon-btn span::before { font-size: 0.8rem; } /* Ensure icon font size is maintained if needed */
+  .header-top .nav-icon-btn #rtl-icon, 
+  .header-top .nav-icon-btn #theme-icon { font-size: 0.9rem; } /* Keep the emoji/icon visible */
+}
+
 /* Navigation removed as per branding request */
 
 .nav-link-item {
@@ -473,7 +490,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 }
 .nav-link-item:hover, .nav-link-item.active {
   color: var(--text-primary) !important;
-  background: rgba(124, 58, 237, .12);
+  background: rgba(139, 46, 46, .12);
 }
 
 .nav-icon-btn {
@@ -520,9 +537,9 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 15% 50%, rgba(124,58,237,.14) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 85% 20%, rgba(6,182,212,.1) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 50% at 60% 85%, rgba(201,168,76,.07) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 60% at 15% 50%, rgba(139,46,46,.14) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 85% 20%, rgba(74,93,35,.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 50% at 60% 85%, rgba(184,134,11,.07) 0%, transparent 50%);
 }
 .hero-grid {
   position: absolute; inset: 0; opacity: .025;
@@ -564,13 +581,13 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 }
 .hero-img-wrap::before {
   content: ''; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(124,58,237,.15) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(139,46,46,.15) 0%, transparent 60%);
 }
 .hero-img-wrap img { width: 100%; display: block; }
 
 .hero-stats { display: flex; gap: 36px; margin-top: 60px; flex-wrap: wrap; }
 .stat-num {
-  font-family: 'Orbitron', sans-serif; font-size: 2.1rem; font-weight: 800;
+  font-family: 'Courier Prime', monospace; font-size: 2.1rem; font-weight: 700;
   color: var(--gold); display: block;
 }
 .stat-lbl { font-size: .75rem; color: var(--text-muted); letter-spacing: .12em; text-transform: uppercase; }
@@ -602,19 +619,19 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 .prod-badge {
   position: absolute; top: 12px; right: 12px;
   background: var(--grad-primary); color: #fff;
-  font-family: 'Orbitron', sans-serif; font-size: .62rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .62rem; font-weight: 700;
   padding: 4px 10px; border-radius: 20px; letter-spacing: .1em;
 }
 .prod-badge.gold-badge { background: var(--grad-gold); color: #1A1508; }
 
-.prod-name { font-family: 'Orbitron', sans-serif; font-size: .98rem; font-weight: 700; margin-bottom: 5px; }
+.prod-name { font-family: 'Playfair Display', serif; font-size: .98rem; font-weight: 700; margin-bottom: 5px; }
 .prod-year { font-size: .78rem; color: var(--text-muted); margin-bottom: 12px; }
 
 .cond-dots { display: flex; gap: 5px; margin-bottom: 14px; }
 .cond-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--bg-tertiary); }
 .cond-dot.on { background: var(--gold); }
 
-.prod-price { font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--gold); }
+.prod-price { font-family: 'Courier Prime', monospace; font-size: 1.15rem; font-weight: 700; color: var(--gold); }
 .prod-divider { border-color: var(--glass-border); margin: 14px 0; }
 
 /* ── Timeline (Restoration) ─────────────────────────────────── */
@@ -630,10 +647,10 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   background: var(--grad-primary); border: 3px solid var(--bg-primary); z-index: 1;
 }
 .tl-step {
-  font-family: 'Orbitron', sans-serif; font-size: .68rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .68rem; font-weight: 700;
   letter-spacing: .15em; color: var(--cyan); margin-bottom: 6px;
 }
-.tl-title { font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+.tl-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
 .tl-desc { color: var(--text-secondary); line-height: 1.75; }
 
 /* ── Rating Bars ────────────────────────────────────────────── */
@@ -642,7 +659,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
 .rating-bar { flex: 1; height: 6px; background: var(--bg-tertiary); border-radius: 3px; overflow: hidden; }
 .rating-fill { height: 100%; border-radius: 3px; background: var(--grad-primary); width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
 .rating-fill.gold { background: var(--grad-gold); }
-.rating-val { font-family: 'Orbitron', sans-serif; font-size: .78rem; color: var(--gold); width: 36px; text-align: right; }
+.rating-val { font-family: 'Courier Prime', monospace; font-size: .78rem; color: var(--gold); width: 36px; text-align: right; font-weight: 700; }
 
 /* ── Form Fields ────────────────────────────────────────────── */
 .form-lbl {
@@ -655,7 +672,7 @@ h1,h2,h3,.orbitron { font-family: 'Orbitron', sans-serif; }
   font-family: 'Inter', sans-serif; font-size: .93rem;
   outline: none; transition: var(--transition);
 }
-.form-ctrl:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(124,58,237,.1); }
+.form-ctrl:focus { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(139,46,46,.1); }
 .form-ctrl::placeholder { color: var(--text-muted); }
 textarea.form-ctrl { resize: vertical; min-height: 120px; }
 select.form-ctrl { cursor: pointer; }
@@ -665,7 +682,7 @@ select.form-ctrl { cursor: pointer; }
 .step-circle {
   width: 38px; height: 38px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Orbitron', sans-serif; font-size: .78rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .78rem; font-weight: 700;
   border: 2px solid var(--glass-border); color: var(--text-muted); transition: var(--transition);
 }
 .step-circle.active { background: var(--grad-primary); border-color: transparent; color: #fff; }
@@ -695,12 +712,12 @@ select.form-ctrl { cursor: pointer; }
   padding: 80px 0 36px;
 }
 .footer-brand-name {
-  font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 1.15rem;
+  font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.15rem;
   color: var(--text-primary); display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
 }
 .footer-desc { color: var(--text-secondary); font-size: .88rem; line-height: 1.75; max-width: 270px; margin-bottom: 24px; }
 .footer-head {
-  font-family: 'Orbitron', sans-serif; font-size: .72rem; font-weight: 700;
+  font-family: 'Courier Prime', monospace; font-size: .72rem; font-weight: 700;
   letter-spacing: .18em; text-transform: uppercase; color: var(--text-primary); margin-bottom: 20px;
 }
 .footer-ul { list-style:none; padding:0; }
@@ -757,7 +774,7 @@ select.form-ctrl { cursor: pointer; }
 /* ── Misc Utilities ─────────────────────────────────────────── */
 .badge-pill {
   display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(124,58,237,.15); border: 1px solid rgba(124,58,237,.3);
+  background: rgba(139,46,46,.15); border: 1px solid rgba(139,46,46,.3);
   color: var(--purple-light); font-size: .72rem; font-weight: 600;
   letter-spacing: .08em; padding: 4px 12px; border-radius: 20px;
 }
@@ -848,8 +865,8 @@ select.form-ctrl { cursor: pointer; }
   padding: 32px;
   position: relative;
 }
-.testi-quote { font-style: italic; color: var(--text-primary); margin-bottom: 24px; position: relative; z-index: 1; }
-.testi-quote i { position: absolute; top: -10px; left: -10px; font-size: 2rem; color: rgba(124,58,237,.1); z-index: -1; }
+.testi-quote { font-style: italic; color: var(--text-primary); margin-bottom: 24px; position: relative; z-index: 1; font-family: 'Playfair Display', serif; }
+.testi-quote i { position: absolute; top: -10px; left: -10px; font-size: 2rem; color: rgba(139,46,46,.1); z-index: -1; }
 .testi-user { display: flex; align-items: center; gap: 12px; }
 .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--grad-primary); }
 .testi-info h4 { font-size: .9rem; font-weight: 700; margin: 0; }

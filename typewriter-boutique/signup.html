@@ -16,7 +16,7 @@
       align-items: center;
       justify-content: center;
       padding: 40px 20px 60px;
-      background: #050505;
+      background: var(--bg-primary);
       position: relative;
       overflow: hidden;
     }
@@ -53,13 +53,23 @@
 
 
 
+<!-- Top Navigation for Signup Page -->
+<div style="position: fixed; top: 20px; left: 0; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000;">
+  <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; transition: var(--transition);" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">
+    <i class="fas fa-arrow-left me-2"></i> BACK TO HOME
+  </a>
+  <a href="login.html" class="btn-outline" style="padding: 8px 20px; font-size: 0.75rem;">
+    SIGN IN
+  </a>
+</div>
+
 <div class="auth-page">
   <div class="auth-card" data-aos="fade-up">
     <div class="card-glass p-5">
       <!-- Logo -->
       <div class="text-center mb-4">
-        <a href="index.html">
-          <img src="assets/logo.png" alt="KeyLegacy Logo" style="height: 70px; margin: 0 auto;">
+        <a href="index.html" style="display: inline-block;">
+          <img src="assets/logo.png" alt="KeyLegacy Logo" style="height: 70px; margin: 0 auto; cursor: pointer;">
         </a>
       </div>
 
