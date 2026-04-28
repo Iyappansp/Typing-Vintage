@@ -278,4 +278,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Newsletter Subscription ─────────────────────────────── */
+  const nlBtn = document.querySelector('.nl-row .btn-grad');
+  const nlInput = document.querySelector('.nl-input');
+  const nlSuccess = document.querySelector('.nl-success');
+
+  if (nlBtn && nlInput && nlSuccess) {
+    nlBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = nlInput.value.trim();
+      
+      if (email && email.includes('@')) {
+        nlBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        nlBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+          document.querySelector('.nl-row').style.display = 'none';
+          nlSuccess.style.display = 'flex';
+        }, 1200);
+      } else {
+        nlInput.style.borderColor = 'var(--purple)';
+        nlInput.placeholder = 'Please enter a valid email';
+        setTimeout(() => { nlInput.style.borderColor = ''; }, 2000);
+      }
+    });
+  }
+
 });

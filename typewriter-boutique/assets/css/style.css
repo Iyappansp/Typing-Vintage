@@ -814,14 +814,31 @@ select.form-ctrl { cursor: pointer; }
 }
 
 /* Newsletter */
-.nl-row { display: flex; gap: 8px; max-width: 340px; }
+.nl-row { display: flex; gap: 0; max-width: 380px; border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); transition: var(--transition); }
+.nl-row:focus-within { border-color: var(--purple); box-shadow: var(--glow-purple); }
 .nl-input {
-  flex: 1; background: var(--bg-tertiary); border: 1px solid var(--glass-border);
-  color: var(--text-primary); padding: 10px 14px; border-radius: 8px;
+  flex: 1; background: var(--bg-tertiary); border: none;
+  color: var(--text-primary); padding: 12px 16px; 
   font-size: .85rem; outline: none; transition: var(--transition);
+  width: 100%;
 }
-.nl-input:focus { border-color: var(--purple); }
+.nl-row .btn-grad {
+  border-radius: 0;
+  padding: 12px 24px;
+  font-size: 0.75rem;
+  height: 100%;
+}
 .nl-input::placeholder { color: var(--text-muted); }
+
+.nl-success {
+  display: none;
+  font-size: 0.8rem;
+  color: #22c55e;
+  margin-top: 10px;
+  align-items: center;
+  gap: 6px;
+  animation: fadeUp 0.4s ease forwards;
+}
 
 /* ── Misc Utilities ─────────────────────────────────────────── */
 .badge-pill {
