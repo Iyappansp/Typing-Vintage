@@ -53,15 +53,50 @@
 
 
 
-<!-- Top Navigation for Signup Page -->
-<div style="position: fixed; top: 20px; left: 0; width: 100%; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000;">
-  <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; transition: var(--transition);" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">
-    <i class="fas fa-arrow-left me-2"></i> BACK TO HOME
-  </a>
-  <a href="login.html" class="btn-outline" style="padding: 8px 20px; font-size: 0.75rem;">
-    SIGN IN
-  </a>
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="home-2.html">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html">Showcase</a>
+      <a href="restoration-process.html">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+      <!-- Mobile Auth Stack -->
+      <div class="mobile-auth-stack">
+        <a href="signup.html" class="auth-btn btn-signup active">Sign Up</a>
+        <a href="login.html" class="auth-btn btn-login">Login</a>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+           <button class="nav-icon-btn" onclick="document.getElementById('rtl-toggle').click()"><i class="fas fa-exchange-alt"></i></button>
+           <button class="nav-icon-btn" onclick="document.getElementById('theme-toggle').click()"><i class="fas fa-adjust"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Toggle -->
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup active">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
 </div>
+<!-- ░░ END HEADER ░░ -->
 
 <div class="auth-page">
   <div class="auth-card" data-aos="fade-up">

@@ -69,6 +69,50 @@
 <body>
 <div id="page-loader"><span class="loader-text">KEY LEGACY</span></div>
 
+<!-- ░░ HEADER ░░ -->
+<div class="header-top">
+  <div class="container-custom">
+    <!-- Left: Logo -->
+    <a href="index.html" class="logo-mini">
+      <img src="assets/logo.png" alt="KeyLegacy Logo" class="logo-img">
+    </a>
+
+    <!-- Center: Links -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="home-2.html">Home-2</a>
+      <a href="gallery.html">Collection</a>
+      <a href="product-view.html">Showcase</a>
+      <a href="restoration-process.html">Restoration</a>
+      <a href="appraisal-services.html">Appraisal</a>
+      <a href="contact.html">Contact</a>
+      <!-- Mobile Auth Stack -->
+      <div class="mobile-auth-stack">
+        <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        <a href="login.html" class="auth-btn btn-login active">Login</a>
+        <div class="d-flex justify-content-center gap-3 mt-2">
+           <button class="nav-icon-btn" onclick="document.getElementById('rtl-toggle').click()"><i class="fas fa-exchange-alt"></i></button>
+           <button class="nav-icon-btn" onclick="document.getElementById('theme-toggle').click()"><i class="fas fa-adjust"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Toggle -->
+    <button class="mobile-nav-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Right: Controls & Buttons -->
+    <div class="nav-controls">
+      <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+      <a href="login.html" class="auth-btn btn-login active">Login</a>
+      <div class="divider"></div>
+      <button class="nav-icon-btn" id="rtl-toggle" title="RTL/LTR"><span id="rtl-icon">⇄ RTL</span></button>
+      <button class="nav-icon-btn" id="theme-toggle" title="Toggle Theme"><span id="theme-icon">☀️</span></button>
+    </div>
+  </div>
+</div>
+<!-- ░░ END HEADER ░░ -->
 
 <div class="login-bg"></div>
 <div class="login-grid"></div>

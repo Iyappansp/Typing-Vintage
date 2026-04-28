@@ -254,10 +254,10 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
   align-items: center;
 }
 
-@media(min-width: 992px) {
+@media(min-width: 1100px) {
   .header-top .container-custom {
     display: grid;
-    grid-template-columns: 200px 1fr 200px; /* Balanced side columns for better centering */
+    grid-template-columns: 180px 1fr 220px; /* Adjusted for better spacing */
   }
 }
 
@@ -270,7 +270,7 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
   cursor: pointer;
 }
 
-@media(max-width: 991px) {
+@media(max-width: 1099px) {
   .header-top .container-custom {
     display: flex !important;
     justify-content: space-between !important;
@@ -285,19 +285,27 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     z-index: 1001 !important;
   }
   .mobile-nav-toggle {
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     order: 1 !important; /* Force to far right */
-    position: relative !important;
-    z-index: 2101 !important;
-    font-size: 1.8rem !important;
-    background: transparent !important;
-    border: none !important;
-    color: var(--text-primary) !important;
-    padding: 10px !important;
-    margin-left: auto !important; /* Extra push to right */
     position: fixed !important;
-    top: 15px !important;
-    right: 20px !important;
+    top: 12px !important;
+    right: 15px !important;
+    z-index: 2101 !important;
+    font-size: 1.2rem !important;
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 8px !important;
+    width: 42px !important;
+    height: 42px !important;
+    color: var(--text-primary) !important;
+    padding: 0 !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    transition: var(--transition) !important;
+  }
+  .mobile-nav-toggle:active {
+    transform: scale(0.95);
   }
   .header-top .nav-controls {
     display: none !important; /* Hide crowded buttons from main bar */
@@ -328,9 +336,9 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     bottom: auto !important;
   }
   
-  @media(max-width: 768px) {
+  @media(max-width: 1099px) {
     .header-top .nav-links {
-      padding: 120px 20px 40px !important; /* Adjusted padding for 768px */
+      padding: 120px 20px 40px !important;
     }
   }
   @media(max-width: 360px) {
@@ -362,17 +370,18 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
   }
   /* Mobile menu specific buttons */
   .mobile-auth-stack {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 40px;
+    gap: 12px;
+    margin-top: 30px;
     width: 100%;
-    padding-top: 25px;
+    padding: 25px 0;
+    border-top: 1px solid var(--glass-border);
   }
   .mobile-auth-stack .auth-btn {
     width: 100%;
-    padding: 14px;
-    font-size: 0.85rem;
+    padding: 12px;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -393,8 +402,8 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     background: var(--bg-tertiary);
   }
   .mobile-auth-stack .nav-icon-btn {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--bg-tertiary);
     border: 1px solid var(--glass-border);
@@ -402,12 +411,14 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: var(--transition);
   }
-  .mobile-auth-stack .nav-icon-btn:hover {
-    border-color: var(--purple);
-    color: var(--purple-light);
+}
+
+@media(min-width: 1100px) {
+  .mobile-auth-stack {
+    display: none !important;
   }
 }
 
@@ -440,10 +451,17 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
   justify-content: center;
   gap: 28px;
 }
+@media(max-width: 1300px) {
+  .header-top .nav-links { gap: 18px; }
+  .header-top .nav-controls { gap: 12px; }
+  .header-top .nav-links a { font-size: 0.65rem; }
+}
+
 @media(max-width: 1200px) {
-  .header-top .nav-links { gap: 10px; } /* Even tighter gap for smaller desktop screens */
-  .header-top .nav-controls { gap: 8px; } /* Reduce gap in controls as well */
-  .header-top .auth-btn { padding: 6px 10px; } /* Slightly smaller buttons */
+  .header-top .nav-links { gap: 12px; }
+  .header-top .nav-controls { gap: 8px; }
+  .header-top .auth-btn { padding: 6px 12px; font-size: 0.62rem; }
+  .header-top .logo-mini .logo-img { height: 40px; }
 }
 .header-top .nav-links a {
   font-size: 0.68rem;
@@ -508,11 +526,10 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
 }
 .header-top .nav-icon-btn:hover { color: var(--gold); }
 
-@media(max-width: 1200px) {
-  .header-top .nav-icon-btn span { font-size: 0; } /* Hide text, keep icons visible */
-  .header-top .nav-icon-btn span::before { font-size: 0.8rem; } /* Ensure icon font size is maintained if needed */
+@media(max-width: 1250px) {
+  .header-top .nav-icon-btn span { display: none; }
   .header-top .nav-icon-btn #rtl-icon, 
-  .header-top .nav-icon-btn #theme-icon { font-size: 0.9rem; } /* Keep the emoji/icon visible */
+  .header-top .nav-icon-btn #theme-icon { font-size: 0.9rem; }
 }
 
 /* Navigation removed as per branding request */
