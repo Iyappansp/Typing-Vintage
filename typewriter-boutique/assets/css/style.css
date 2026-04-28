@@ -48,36 +48,71 @@
   --bg-secondary:   #EBE1C7;
   --bg-tertiary:    #E2D4B5;
   --bg-card:        #FAF6EB;
-  --glass-bg:       rgba(250, 246, 235, 0.88);
-  --glass-border:   rgba(44, 36, 27, 0.15);
-  --glass-border-h: rgba(139, 46, 46, 0.55);
-  --text-primary:   #1A1412; /* Darker for better visibility */
-  --text-secondary: #3D3128; /* Darker for better visibility */
-  --text-muted:     #5C4D40; /* Darker for better visibility */
+  --glass-bg:       rgba(250, 246, 235, 0.9);
+  --glass-border:   rgba(26, 20, 18, 0.25); /* Darker border */
+  --glass-border-h: rgba(139, 46, 46, 0.6);
+  --text-primary:   #000000; /* Solid black */
+  --text-secondary: #111111; /* Almost black */
+  --text-muted:     #333333; /* Dark gray for muted elements */
   --purple:         #8B2E2E;
   --purple-light:   #702222;
-  --cyan:           #4A5D23;
-  --gold:           #966D09; /* Darker gold for better contrast on light bg */
-  --gold-light:     #7A5907;
+  --cyan:           #2D3D0F; /* Dark green/cyan */
+  --cyan-light:     #1E290A;
+  --gold:           #7A5907; /* Darker gold */
+  --gold-light:     #5E4405;
   --navbar-bg:      rgba(244, 236, 216, 0.98);
 }
 
-/* Force light text in dark banners when in light mode (since backgrounds are dark) */
+/* Force light text ONLY in banners that have DARK background images/overlays */
 [data-theme="light"] .gallery-hero,
 [data-theme="light"] .page-banner,
 [data-theme="light"] .page-hero,
-[data-theme="light"] .mag-hero,
-[data-theme="light"] .hero-section:has(.hero-bg) {
+[data-theme="light"] .mag-hero {
   --text-primary:   #FAF6EB; /* Pure white for maximum visibility */
   --text-secondary: #EBE1C7; /* Light gray for secondary text */
   --text-muted:     #E2D4B5; /* Brighter muted color */
-  --purple:         #FF5252; /* Bright red/purple for high contrast */
-  --purple-light:   #FF6B6B; /* Vibrant red/purple for high contrast */
-  --gold:           #FFD700; /* Bright gold for high contrast */
-  --gold-light:     #FDB931; /* Bright warm gold */
-  --cyan-light:     #22D3EE; /* Vibrant cyan */
-  --glass-bg:       rgba(26, 20, 18, 0.75); /* Keep glass cards dark in hero */
+  --purple:         #FF5252;
+  --purple-light:   #FF6B6B;
+  --gold:           #FFD700;
+  --gold-light:     #FDB931;
+  --cyan-light:     #22D3EE;
+  --glass-bg:       rgba(26, 20, 18, 0.75);
   --glass-border:   rgba(255, 235, 205, 0.07);
+}
+
+/* Explicitly force white text for ALL elements in these light-mode dark sections */
+[data-theme="light"] .gallery-hero h1,
+[data-theme="light"] .gallery-hero p,
+[data-theme="light"] .gallery-hero span,
+[data-theme="light"] .page-banner h1,
+[data-theme="light"] .page-banner h3,
+[data-theme="light"] .page-banner p,
+[data-theme="light"] .page-banner span,
+[data-theme="light"] .page-banner div:not(.contact-icon),
+[data-theme="light"] .page-hero h1,
+[data-theme="light"] .page-hero p,
+[data-theme="light"] .page-hero span,
+[data-theme="light"] .page-hero a:not(.btn-grad):not(.btn-outline),
+[data-theme="light"] .mag-hero .mag-headline,
+[data-theme="light"] .mag-hero .author-chip span,
+[data-theme="light"] .mag-hero p {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] .appraisal-badge {
+  color: var(--gold-light) !important;
+  background: rgba(201,168,76,0.15) !important;
+}
+
+/* The standard hero-section in index.html has a light background in light mode, so it needs DARK text */
+[data-theme="light"] .hero-section:has(.hero-bg) {
+  --text-primary:   #000000;
+  --text-secondary: #111111;
+  --text-muted:     #333333;
+}
+
+[data-theme="light"] .btn-outline {
+  border-color: rgba(0,0,0,0.25);
 }
 
 /* ── Reset & Base ──────────────────────────────────────────── */
